@@ -1,9 +1,7 @@
 <h1>Script Json Pretty Print</h1>
 
-## Dashboard
-- Es un Json Pretty Print de la respuesta de la API
-
 <h2>Descripción</h2>
+Es un Json Pretty Print de la respuesta de la API
 <pre>
 <code>
 bash-3.2$ meli-rest.sh url
