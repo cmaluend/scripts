@@ -32,12 +32,25 @@ def print_json(text):
 def parse_argv(argv):
     try:
         urls = []
-        opts, args = getopt.getopt(sys.argv[1:], 'ip',['url=','item-api='])
+        opts, args = getopt.getopt(sys.argv[1:], 'ip',['url=','item-api=', 'content='])
         opts = dict(opts)
-        print opts
-        print args
+        #print opts
+        #print args
+        if len(opts)==0:
+            raise Exception()
     except Exception as e:
-        print e
+        print '''
+        uso: %s [-p | -i] options
+        
+        -p : Api pública
+        -i : Api internal (default)
+        
+        options:
+        --url=URL : llamar a la API usando URL.
+        --content=CONTENT : Llamado de la API con los parámetros CONTENT.
+        --item-api=ITEM_ID : Detalle para el ITEM_ID
+        '''%(sys.argv[0])
+        sys.exit()
         
     url = None
     content = None
