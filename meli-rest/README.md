@@ -1,6 +1,6 @@
 <h1>Meli ScriptsMeli</h1>
 
-<h2>meli-rest</h2>
+<h2>meli-rest.py</h2>
 Es un Json Pretty Print de la API.
 <pre>
 <code>
