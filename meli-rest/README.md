@@ -11,10 +11,10 @@ bash-3.2$ meli-rest.py url
 }
 </code>
 </pre>
-<h2>meli-category.py</h2>
+<h2>meli-categories.py</h2>
 Genera todo el json de las categorias.
 <pre>
 <code>
-bash-3.2$ meli-category.py category_id
+bash-3.2$ meli-categories.py category_id
 </code>
 </pre>
