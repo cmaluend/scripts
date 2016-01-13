@@ -9,8 +9,7 @@ import urllib2
 # export PYTHONIOENCODING='UTF-8'
 # para redireccionar la salida std a un archivo.
 
-def call_api(id, content=None):
-    url = '%s%s'%('https://api.mercadolibre.com/categories/', id)
+def call(url):
     try:
         request = urllib2.Request(url)
         response = urllib2.urlopen(request)
@@ -18,8 +17,15 @@ def call_api(id, content=None):
         jout = json.loads(output, 'utf-8')
         return jout
     except Exception as e:
-        print "Error en el llamado a la api con los parámetros:\n> url: %s\n> content: %s"%(url, content)
+        print "Error en el llamado a la api con los parámetros:\n> url: %s"%(url)
         sys.exit()
+
+def call_api(id, attr=""):
+    url = '%s%s'%('https://api.mercadolibre.com/categories/', id)
+    response = call(url)
+    response['attribute'] = call(url+'/attributes')
+    return response
+
 
 def process(jout):
     categories = jout.get('children_categories', '')
